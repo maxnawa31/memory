@@ -108,7 +108,7 @@ function scoreBoard(name){ // scoreboard function to display score of player
 }
 
 
-
+//fisher yates shuffle algorithm
 function shuffle(a) {
   var newArray = a.slice()
   var j, x, i;
