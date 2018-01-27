@@ -21,7 +21,7 @@ function startGame() {
     divs[i].removeEventListener("click", func) // remove event listeners from each item;
     divs[i].style.background = 'url(' + moma + ')'; //set background back to original image;
   }
-  counter = 0;
+  counter = 0; //reset counter for score
   var shuffledCards = shuffle(cards); // implements shuffle method
   document.getElementById('counter').innerHTML = counter;
   for (var i = 0; i < divs.length; i++) { //itereate over all divs with class of "cell" and attach unique
@@ -99,7 +99,7 @@ function checkWinner() {
 
 function scoreBoard(name){ // scoreboard function to display score of player
   console.log(name)
-  var playerName = localStorage.getItem(name); 
+  var playerName = localStorage.getItem(name);
   var scoreList = document.getElementById("score-page");
   var newItem = document.createElement("li");
   newItem.innerHTML = name + " : " + playerName;
