@@ -1,0 +1,58 @@
+body {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image:  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("https://media.timeout.com/images/100491963/image.jpg");
+}
+.cell {
+  background-color: ghostwhite;
+
+}
+
+.scoreboard-style{
+  text-align: center;
+  color:white;
+  font-size: 36px;
+}
+
+#score-page{
+  list-style: none;
+}
+
+#counter{
+  text-align: center;
+  color:white;
+  font-size: 20px;
+}
+
+.button-size{
+  height:400px;
+  width:200px;
+}
+
+.button{
+  text-align:center;
+  padding-bottom: 30px;
+  margin-bottom:-10px;
+}
+
+.container {
+  margin-top: -1%;
+  text-align: center;
+}
+
+.column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.column div {
+  background-position: center ;
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  margin: 30px 15px;
+  font-size: 176px;
+  border-radius: 4px;
+  border: 0px;
+  background-image: url("http://educationaltravelconsultants.com/blog/wp-content/uploads/moma1.jpg");
+}
