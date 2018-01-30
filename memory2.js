@@ -38,7 +38,10 @@ function func() {
   this.style.background = 'url(' + this.dataset.icon + ')'; //set each background url to its unique dataset
   this.style.backgroundPosition = "center"; //set background position for each image
   this.classList.add("clicked"); //add class clicked if clicked;
-  counter++; //incrememt counter by 1
+
+
+    counter++;
+   //incrememt counter by 1
   document.getElementById('counter').innerHTML = counter //change display number of counter
   console.log(counter);
   checkMatch(); //run checkMatch function to see if theres a match
@@ -54,14 +57,14 @@ function checkMatch() {
       Array.from(clickedItems).forEach(function(value) { //use array.from in order to create new array instance from array - like object
         value.style.background = 'url(' + value.dataset.icon + ')'; //for each item in array, make permanent change to background image;
         value.style.backgroundPosition = 'center';
-        value.classList.remove("unmatched");//remove the unmatched class from image;
+        value.classList.remove("unmatched"); //remove the unmatched class from image;
 
       })
       Array.from(clickedItems).forEach(function(item) { //remove clicked class from both items.
         item.classList.remove("clicked");
       })
 
-      checkWinner();//check to see if there is a winner after finding a match;
+      checkWinner(); //check to see if there is a winner after finding a match;
     } else { //run this code if there are no matches after two items are clicked;
       setTimeout(function() { // run a settimeout function after 1 sec;
         Array.from(clickedItems).forEach(function(card) { //iterate over all items with clicked class;
@@ -81,7 +84,7 @@ function checkWinner() {
   if (allUnmatched.length === 0) { // if there are no more elements with class of "unmatched", run this code;
     var name = prompt("Game Over! Please Enter Your Name.")
     localStorage.setItem(name, counter);
-    scoreBoard(name,counter)//alert the player that they won the game;
+    scoreBoard(name, counter) //alert the player that they won the game;
     counter = 0; //reset the score counter to 0;
     Array.from(clearAll).forEach(function(value) { //remove the clicked class;
       value.classList.remove("clicked");
@@ -97,7 +100,7 @@ function checkWinner() {
 }
 
 
-function scoreBoard(name){ // scoreboard function to display score of player
+function scoreBoard(name) { // scoreboard function to display score of player
   console.log(name)
   var playerName = localStorage.getItem(name);
   var scoreList = document.getElementById("score-page");
