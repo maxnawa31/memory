@@ -1,16 +1,16 @@
 //variables containing links to images
-var lasMeninas = "https://content3.cdnprado.net/imagenes/Documentos/imgsem/68/6871/68718fb0-d062-4db4-bf25-7af5824eebac/d44c40de-9d5b-4280-a096-9f63b116dcec.jpg"
-var garden = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Hieronymus_Bosch_-_The_Garden_of_Earthly_Delights_-_Garden_of_Earthly_Delights_%28Ecclesia%27s_Paradise%29.jpg/400px-Hieronymus_Bosch_-_The_Garden_of_Earthly_Delights_-_Garden_of_Earthly_Delights_%28Ecclesia%27s_Paradise%29.jpg"
-var nighthawks = "https://secure.img2-fg.wfcdn.com/im/10530227/resize-h600-w600%5Ecompr-r85/4557/4557414/%27Nighthawks%27+by+Edward+Hopper+Framed+Painting+Print.jpg"
-var rothko = "https://media.nga.gov/public/objects/5/6/3/5/0/56350-primary-0-740x560.jpg"
-var oath = "https://imgc.allpostersimages.com/img/print/posters/jacques-louis-david-the-oath-of-the-horatii_a-G-2587543-8880731.jpg"
-var vanGough = "http://www.theartstory.org/images20/works/van_gogh_vincent_3.jpg"
-var guernica = "https://news.artnet.com/app/news-upload/2017/01/guernica_1-256x256.jpg"
-var athens = "https://imgc.artprintimages.com/img/print/print/raphael-school-of-athens-circa-1510-1512-one-of-the-murals-raphael-painted-for-pope-julius-ii_a-l-2572141-8880731.jpg?w=550&h=550"
-var cards = [lasMeninas, lasMeninas, garden, garden, nighthawks, nighthawks, rothko, rothko, oath, oath, guernica, guernica];
-var $divs = $(".cell")
-var moma = "http://educationaltravelconsultants.com/blog/wp-content/uploads/moma1.jpg"
-var counter = 0;
+const lasMeninas = "https://media1.britannica.com/eb-media/03/4903-004-7438539D.jpg"
+const garden = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Hieronymus_Bosch_-_The_Garden_of_Earthly_Delights_-_Garden_of_Earthly_Delights_%28Ecclesia%27s_Paradise%29.jpg/400px-Hieronymus_Bosch_-_The_Garden_of_Earthly_Delights_-_Garden_of_Earthly_Delights_%28Ecclesia%27s_Paradise%29.jpg"
+const nighthawks = "https://secure.img2-fg.wfcdn.com/im/10530227/resize-h600-w600%5Ecompr-r85/4557/4557414/%27Nighthawks%27+by+Edward+Hopper+Framed+Painting+Print.jpg"
+const rothko = "https://media.nga.gov/public/objects/5/6/3/5/0/56350-primary-0-740x560.jpg"
+const oath = "https://imgc.allpostersimages.com/img/print/posters/jacques-louis-david-the-oath-of-the-horatii_a-G-2587543-8880731.jpg"
+const vanGough = "http://www.theartstory.org/images20/works/van_gogh_vincent_3.jpg"
+const guernica = "https://news.artnet.com/app/news-upload/2017/01/guernica_1-256x256.jpg"
+const athens = "https://imgc.artprintimages.com/img/print/print/raphael-school-of-athens-circa-1510-1512-one-of-the-murals-raphael-painted-for-pope-julius-ii_a-l-2572141-8880731.jpg?w=550&h=550"
+const cards = [lasMeninas, lasMeninas, garden, garden, nighthawks, nighthawks, rothko, rothko, oath, oath, guernica, guernica];
+const $divs = $(".cell")
+const moma = "http://educationaltravelconsultants.com/blog/wp-content/uploads/moma1.jpg"
+let counter = 0;
 
 // function newGame() {
 //   $divs.each(function() {
@@ -42,8 +42,13 @@ function startGame() {
 function func() {
   $(this).css("background-image", 'url(' + $(this).attr("data-url") + ')'); //set each background url to its unique dataset
   $(this).css("backgroundPosition", "center"); //set background position for each image
-  $(this).addClass("clicked"); //add class clicked if clicked;
-  counter = counter + 1; //incrememt counter by 1
+  $(this).addClass("clicked");
+  //add class clicked if clicked;
+  var clicked = $(".clicked");
+  if(clicked.length < 2){
+  counter = counter + 1;
+}
+  //incrememt counter by 1
   $('#counter').html(counter) //change display number of counter
   console.log(counter);
   checkMatch(); //run checkMatch function to see if theres a match
