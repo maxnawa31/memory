@@ -1,5 +1,5 @@
 //variables containing links to images
-var lasMeninas = "https://content3.cdnprado.net/imagenes/Documentos/imgsem/68/6871/68718fb0-d062-4db4-bf25-7af5824eebac/d44c40de-9d5b-4280-a096-9f63b116dcec.jpg"
+var lasMeninas = "https://media1.britannica.com/eb-media/03/4903-004-7438539D.jpg"
 var garden = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Hieronymus_Bosch_-_The_Garden_of_Earthly_Delights_-_Garden_of_Earthly_Delights_%28Ecclesia%27s_Paradise%29.jpg/400px-Hieronymus_Bosch_-_The_Garden_of_Earthly_Delights_-_Garden_of_Earthly_Delights_%28Ecclesia%27s_Paradise%29.jpg"
 var nighthawks = "https://secure.img2-fg.wfcdn.com/im/10530227/resize-h600-w600%5Ecompr-r85/4557/4557414/%27Nighthawks%27+by+Edward+Hopper+Framed+Painting+Print.jpg"
 var rothko = "https://media.nga.gov/public/objects/5/6/3/5/0/56350-primary-0-740x560.jpg"
@@ -41,8 +41,10 @@ function func() {
   this.style.backgroundPosition = "center"; //set background position for each image
   this.classList.add("clicked"); //add class clicked if clicked;
 
-
+    var allClicked = document.getElementsByClassName("clicked");
+    if(allClicked.length < 2){
     counter++;
+    }
    //incrememt counter by 1
   document.getElementById('counter').innerHTML = counter //change display number of counter
   console.log(counter);
