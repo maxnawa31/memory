@@ -41,10 +41,9 @@ function func() {
   this.style.backgroundPosition = "center"; //set background position for each image
   this.classList.add("clicked"); //add class clicked if clicked;
 
-    var allClicked = document.getElementsByClassName("clicked");
-    if(allClicked.length < 2){
+
     counter++;
-    }
+
    //incrememt counter by 1
   document.getElementById('counter').innerHTML = counter //change display number of counter
   console.log(counter);
