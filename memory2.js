@@ -35,6 +35,8 @@ function startGame() {
 
 ///function that is passed to the "click" event listener attached to each image;
 function func() {
+  var clicked = document.getElementsByClassName("clicked");
+  if(clicked.length < 2){
   this.style.background = 'url(' + this.dataset.icon + ')'; //set each background url to its unique dataset
   this.style.backgroundPosition = "center"; //set background position for each image
   this.classList.add("clicked"); //add class clicked if clicked;
@@ -45,8 +47,8 @@ function func() {
   document.getElementById('counter').innerHTML = counter //change display number of counter
   console.log(counter);
   checkMatch(); //run checkMatch function to see if theres a match
+  }
 }
-
 //function checkMatch is called after image is clicked on.
 function checkMatch() {
   var clickedItems = document.getElementsByClassName("clicked") //get all elements with class of clicked
@@ -58,7 +60,7 @@ function checkMatch() {
         value.style.background = 'url(' + value.dataset.icon + ')'; //for each item in array, make permanent change to background image;
         value.style.backgroundPosition = 'center';
         value.classList.remove("unmatched"); //remove the unmatched class from image;
-
+        value.removeEventListener("click", func)
       })
       Array.from(clickedItems).forEach(function(item) { //remove clicked class from both items.
         item.classList.remove("clicked");
