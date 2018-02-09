@@ -40,20 +40,22 @@ function startGame() {
 
 ///function that is passed to the "click" event listener attached to each image;
 function func() {
+  var clicked = $(".clicked");
+  if(clicked.length <2){
   $(this).css("background-image", 'url(' + $(this).attr("data-url") + ')'); //set each background url to its unique dataset
   $(this).css("backgroundPosition", "center"); //set background position for each image
   $(this).addClass("clicked");
   //add class clicked if clicked;
-  var clicked = $(".clicked");
-  if(clicked.length < 2){
+
+
   counter = counter + 1;
-}
+
   //incrememt counter by 1
   $('#counter').html(counter) //change display number of counter
   console.log(counter);
   checkMatch(); //run checkMatch function to see if theres a match
+  }
 }
-
 //function checkMatch is called after image is clicked on.
 function checkMatch() {
   var $clickedItems = $(".clicked") //get all elements with class of clicked
@@ -65,7 +67,7 @@ function checkMatch() {
         $(this).css("background-image", 'url(' + $(this).attr("data-url") + ')'); //for each item in array, make permanent change to background image;
         $(this).css("backgroundPosition", "center");
         $(this).removeClass("unmatched"); //remove the unmatched class from image;
-
+        $(this).off("click", func)
       })
       $clickedItems.each(function() { //remove clicked class from both items.
         $(this).removeClass("clicked");
