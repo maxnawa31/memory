@@ -1,5 +1,5 @@
 //variables containing links to images
-var lasMeninas = "https://media1.britannica.com/eb-media/03/4903-004-7438539D.jpg"
+var lasMeninas = "https://imgc.artprintimages.com/img/print/print/diego-velazquez-las-meninas-the-maids-of-honour-detail_a-l-2581597-8880731.jpg?w=550&h=550"
 var garden = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Hieronymus_Bosch_-_The_Garden_of_Earthly_Delights_-_Garden_of_Earthly_Delights_%28Ecclesia%27s_Paradise%29.jpg/400px-Hieronymus_Bosch_-_The_Garden_of_Earthly_Delights_-_Garden_of_Earthly_Delights_%28Ecclesia%27s_Paradise%29.jpg"
 var nighthawks = "https://secure.img2-fg.wfcdn.com/im/10530227/resize-h600-w600%5Ecompr-r85/4557/4557414/%27Nighthawks%27+by+Edward+Hopper+Framed+Painting+Print.jpg"
 var rothko = "https://media.nga.gov/public/objects/5/6/3/5/0/56350-primary-0-740x560.jpg"
